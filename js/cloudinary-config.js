@@ -16,8 +16,8 @@
 // ৪. নিচের দুইটা ভ্যালু পূরণ করুন।
 // ============================================================
 
-const CLOUDINARY_CLOUD_NAME = "YOUR_CLOUD_NAME";
-const CLOUDINARY_UPLOAD_PRESET = "YOUR_UNSIGNED_UPLOAD_PRESET";
+const CLOUDINARY_CLOUD_NAME = "rzfqcddu";
+const CLOUDINARY_UPLOAD_PRESET = "pChat7";
 
 /**
  * Cloudinary-তে একটি ছবি আপলোড করে তার পাবলিক URL রিটার্ন করে।
