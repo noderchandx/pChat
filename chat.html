@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>চ্যাট</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+
+  <!-- ================= Sidebar: Chat List ================= -->
+  <div class="sidebar" id="sidebarView">
+    <div class="topbar">
+      <a href="profile.html"><img class="avatar" id="myAvatar" src="" alt="আমার প্রোফাইল"></a>
+      <h1>চ্যাট</h1>
+      <button class="theme-toggle" id="themeToggleBtn" title="থিম পরিবর্তন">🌓</button>
+      <button class="btn--icon" id="logoutBtn" title="লগআউট">⎋</button>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" id="userSearch" placeholder="নাম বা মোবাইল দিয়ে ইউজার খুঁজুন...">
+    </div>
+
+    <div id="searchResults" class="chat-list hidden"></div>
+
+    <div id="chatList" class="chat-list"></div>
+    <div id="chatListEmpty" class="empty-state hidden">
+      <div class="empty-state__icon">💬</div>
+      <h3>কোনো চ্যাট নেই</h3>
+      <p>উপরে সার্চ করে নতুন কাউকে মেসেজ পাঠান</p>
+    </div>
+  </div>
+
+  <!-- ================= Conversation View ================= -->
+  <div class="conversation hidden" id="conversationView">
+    <div class="topbar">
+      <button class="btn--icon" id="backBtn" title="পেছনে">←</button>
+      <div class="avatar-wrap">
+        <img class="avatar" id="peerAvatar" src="" alt="">
+        <span class="status-dot" id="peerStatusDot"></span>
+      </div>
+      <div style="flex:1; min-width:0;">
+        <div id="peerName" style="font-weight:600; font-size:15px;"></div>
+        <div id="peerStatusText" class="text-muted" style="font-size:12px;"></div>
+      </div>
+      <button class="btn--icon" id="blockBtn" title="ব্লক/আনব্লক">⛔</button>
+    </div>
+
+    <div class="messages" id="messages"></div>
+
+    <div class="empty-state hidden" id="conversationEmpty">
+      <div class="empty-state__icon">👋</div>
+      <h3>কথোপকথন শুরু করুন</h3>
+      <p>একটি মেসেজ পাঠিয়ে শুরু করুন</p>
+    </div>
+
+    <div class="composer">
+      <button type="button" class="btn--icon" id="emojiBtn" title="ইমোজি">😊</button>
+      <button type="button" class="btn--icon" id="imageBtn" title="ছবি পাঠান">🖼️</button>
+      <input type="file" id="imageInput" accept="image/*" hidden>
+      <textarea id="messageInput" rows="1" placeholder="মেসেজ লিখুন..." maxlength="2000"></textarea>
+      <button type="button" class="btn--icon" id="sendBtn" title="পাঠান" style="background:var(--accent); color:#fff;">➤</button>
+
+      <div class="emoji-panel hidden" id="emojiPanel"></div>
+    </div>
+  </div>
+
+  <!-- Desktop default empty state when no conversation selected -->
+  <div class="conversation empty-state" id="noConversationSelected">
+    <div class="empty-state__icon">💬</div>
+    <h3>একটি চ্যাট বেছে নিন</h3>
+    <p>বাম পাশের লিস্ট থেকে কারও সাথে চ্যাট শুরু করুন</p>
+  </div>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/cloudinary-config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/chat.js"></script>
+</body>
+</html>

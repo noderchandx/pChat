@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login — চ্যাট অ্যাপ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="auth-screen">
+    <form class="auth-card" id="loginForm" novalidate>
+      <div class="auth-card__logo">চ্যাট</div>
+      <h1>লগইন করুন</h1>
+      <p class="auth-card__sub">আপনার মোবাইল নম্বর ও পাসওয়ার্ড দিন</p>
+
+      <div class="field">
+        <label for="mobile">মোবাইল নম্বর</label>
+        <input type="tel" id="mobile" placeholder="01XXXXXXXXX" required>
+        <div class="field__error" id="mobileError"></div>
+      </div>
+
+      <div class="field">
+        <label for="password">পাসওয়ার্ড</label>
+        <input type="password" id="password" required>
+        <div class="field__error" id="passwordError"></div>
+      </div>
+
+      <button type="submit" class="btn" id="loginBtn">লগইন</button>
+
+      <div class="auth-card__footer">
+        নতুন ইউজার? <a href="signup.html">সাইন আপ করুন</a>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

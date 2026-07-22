@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>প্রোফাইল</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell" style="max-width:480px;">
+  <div class="topbar">
+    <button class="btn--icon" id="backBtn" title="পেছনে">←</button>
+    <h1>প্রোফাইল</h1>
+    <button class="theme-toggle" id="themeToggleBtn" title="থিম পরিবর্তন">🌓</button>
+  </div>
+
+  <div style="padding:20px; overflow-y:auto;">
+
+    <div class="avatar-upload">
+      <label class="avatar-upload__preview" id="avatarPreview" for="avatarInput">
+        <span id="avatarPlaceholder">ছবি পরিবর্তন</span>
+      </label>
+      <input type="file" id="avatarInput" accept="image/*" hidden>
+    </div>
+
+    <form id="profileForm">
+      <div class="field">
+        <label for="name">নাম</label>
+        <input type="text" id="name" required>
+        <div class="field__error" id="nameError"></div>
+      </div>
+      <div class="field">
+        <label for="mobile">মোবাইল নম্বর</label>
+        <input type="text" id="mobile" disabled>
+        <div class="field__hint">মোবাইল নম্বর পরিবর্তনযোগ্য নয়।</div>
+      </div>
+      <div class="field">
+        <label for="email">ইমেইল (ঐচ্ছিক)</label>
+        <input type="email" id="email">
+        <div class="field__error" id="emailError"></div>
+      </div>
+      <button type="submit" class="btn">প্রোফাইল সংরক্ষণ করুন</button>
+    </form>
+
+    <hr style="margin:26px 0; border:none; border-top:1px solid var(--border);">
+
+    <h3 style="margin-bottom:14px;">পাসওয়ার্ড পরিবর্তন করুন</h3>
+    <form id="passwordForm">
+      <div class="field">
+        <label for="currentPassword">বর্তমান পাসওয়ার্ড</label>
+        <input type="password" id="currentPassword" required>
+      </div>
+      <div class="field">
+        <label for="newPassword">নতুন পাসওয়ার্ড</label>
+        <input type="password" id="newPassword" required>
+        <div class="field__error" id="newPasswordError"></div>
+      </div>
+      <button type="submit" class="btn btn--ghost">পাসওয়ার্ড পরিবর্তন করুন</button>
+    </form>
+
+    <hr style="margin:26px 0; border:none; border-top:1px solid var(--border);">
+
+    <button class="btn btn--danger" id="logoutBtn">লগআউট করুন</button>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/cloudinary-config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/profile.js"></script>
+</body>
+</html>
